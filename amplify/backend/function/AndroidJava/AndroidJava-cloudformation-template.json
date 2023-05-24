@@ -43,16 +43,16 @@
             "Ref": "s3Key"
           }
         },
-        "Handler": "index.handler",
+        "Handler": "example.LambdaRequestHandler::handleRequest",
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "Todo",
+            "AndroidJava",
             {
               "Fn::Join": [
                 "",
                 [
-                  "Todo",
+                  "AndroidJava",
                   "-",
                   {
                     "Ref": "env"
@@ -78,7 +78,7 @@
             "Arn"
           ]
         },
-        "Runtime": "nodejs18.x",
+        "Runtime": "java11",
         "Layers": [],
         "Timeout": 25
       }
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "amplifyapiLambdaRolef0b05b21",
+            "amplifyapiLambdaRole667171d1",
             {
               "Fn::Join": [
                 "",
                 [
-                  "amplifyapiLambdaRolef0b05b21",
+                  "amplifyapiLambdaRole667171d1",
                   "-",
                   {
                     "Ref": "env"

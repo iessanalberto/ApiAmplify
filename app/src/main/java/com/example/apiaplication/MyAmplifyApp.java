@@ -5,17 +5,21 @@ import android.util.Log;
 
 import com.amplifyframework.AmplifyException;
 import com.amplifyframework.api.aws.AWSApiPlugin;
+import com.amplifyframework.api.rest.RestOperation;
 import com.amplifyframework.api.rest.RestOptions;
+import com.amplifyframework.api.rest.RestResponse;
 import com.amplifyframework.auth.cognito.AWSCognitoAuthPlugin;
 import com.amplifyframework.core.Amplify;
 
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
 
 public class MyAmplifyApp extends Application {
 
+    ArrayList<String> ls = new ArrayList<String>();
     public void onCreate() {
         super.onCreate();
         try {
@@ -27,39 +31,31 @@ public class MyAmplifyApp extends Application {
             Log.e("MyAmplifyApp", "Could not initialize Amplify", error);
         }
 
-        /*RestOptions options = RestOptions.builder()
-                .addPath("/todo")
-                .addBody("{\"name\":\"Mow the lawn\"}".getBytes(StandardCharsets.UTF_8))
-                .build();
-
-
-
-        Amplify.API.post(options,
-                response -> Log.i("MyAmplifyApp", "POST succeeded: " + response),
-                error -> Log.e("MyAmplifyApp", "POST failed.", error)
-        );
-
-        RestOptions options2 = RestOptions.builder()
-                .addPath("/todo")
-                .addQueryParameters(Collections.singletonMap("q", "test"))
-                .build();
-
-        Amplify.API.get(options2,
-                response -> Log.i("MyAmplifyApp", "GET succeeded: " + response),
-                error -> Log.e("MyAmplifyApp", "GET failed.", error)
-        );*/
-
         getTodo();
 
     }
 
     public void getTodo() {
         RestOptions options = RestOptions.builder()
-                .addPath("/todo")
+                .addPath("/documents")
                 .build();
 
+        RestOperation operation = Amplify.API.get(options,
+                restResponse ->
+                {
+                    String rawData = restResponse.getData().asString();
+                    ls.add(rawData);
+                    Log.i("RESTapiOperation", "GET succeeded1: " + restResponse.getData().asString());
+                },
+                apiFailure ->
+                        Log.e("RESTapiOperation", "GET failed: ", apiFailure)
+        );
+
+        Log.i("Data Collection", "Size of list is " + ls.size());
+
+
         Amplify.API.get(options,
-                restResponse -> Log.i("MyAmplifyApp", "GET succeeded: " + restResponse),
+                restResponse -> Log.i("MyAmplifyApp", "GET succeeded: " + restResponse.getData().asString()),
                 apiFailure -> Log.e("MyAmplifyApp", "GET failed.", apiFailure)
         );
     }

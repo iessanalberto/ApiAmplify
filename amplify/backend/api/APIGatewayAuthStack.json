@@ -11,7 +11,7 @@
     "env": {
       "Type": "String"
     },
-    "api": {
+    "ApiAndroidJava": {
       "Type": "String"
     }
   },
@@ -52,7 +52,7 @@
                       },
                       ":",
                       {
-                        "Ref": "api"
+                        "Ref": "ApiAndroidJava"
                       },
                       "/",
                       {
@@ -64,7 +64,7 @@
                           }
                         ]
                       },
-                      "/*/Todo/*"
+                      "/*/documents/*"
                     ]
                   ]
                 },
@@ -82,7 +82,7 @@
                       },
                       ":",
                       {
-                        "Ref": "api"
+                        "Ref": "ApiAndroidJava"
                       },
                       "/",
                       {
@@ -94,7 +94,7 @@
                           }
                         ]
                       },
-                      "/*/Todo"
+                      "/*/documents"
                     ]
                   ]
                 }
@@ -135,7 +135,7 @@
                       },
                       ":",
                       {
-                        "Ref": "api"
+                        "Ref": "ApiAndroidJava"
                       },
                       "/",
                       {
@@ -147,7 +147,7 @@
                           }
                         ]
                       },
-                      "/*/Todo/*"
+                      "/*/documents/*"
                     ]
                   ]
                 },
@@ -165,7 +165,7 @@
                       },
                       ":",
                       {
-                        "Ref": "api"
+                        "Ref": "ApiAndroidJava"
                       },
                       "/",
                       {
@@ -177,7 +177,7 @@
                           }
                         ]
                       },
-                      "/*/Todo"
+                      "/*/documents"
                     ]
                   ]
                 }

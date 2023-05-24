@@ -1,6 +1,6 @@
 {
   "api": {
-    "api": {
+    "ApiAndroidJava": {
       "dependsOn": [
         {
           "attributes": [
@@ -8,7 +8,7 @@
             "Arn"
           ],
           "category": "function",
-          "resourceName": "Todo"
+          "resourceName": "AndroidJava"
         }
       ],
       "providerPlugin": "awscloudformation",
@@ -42,26 +42,26 @@
     }
   },
   "function": {
-    "Todo": {
+    "AndroidJava": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "parameters": {
-    "AMPLIFY_function_Todo_deploymentBucketName": {
+    "AMPLIFY_function_AndroidJava_deploymentBucketName": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "Todo"
+          "resourceName": "AndroidJava"
         }
       ]
     },
-    "AMPLIFY_function_Todo_s3Key": {
+    "AMPLIFY_function_AndroidJava_s3Key": {
       "usedBy": [
         {
           "category": "function",
-          "resourceName": "Todo"
+          "resourceName": "AndroidJava"
         }
       ]
     }

@@ -1,9 +1,9 @@
 {
   "version": 1,
   "paths": {
-    "/Todo": {
-      "name": "/Todo",
-      "lambdaFunction": "Todo",
+    "/documents": {
+      "name": "/documents",
+      "lambdaFunction": "AndroidJava",
       "permissions": {
         "setting": "protected",
         "auth": [

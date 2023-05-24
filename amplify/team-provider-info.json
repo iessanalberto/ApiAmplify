@@ -13,17 +13,17 @@
       "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-amplifyapi-dev-180846-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
-      "function": {
-        "Todo": {
-          "deploymentBucketName": "amplify-amplifyapi-dev-180846-deployment",
-          "s3Key": "amplify-builds/Todo-4872615a4f564e785a70-build.zip"
-        }
-      },
       "auth": {
         "amplifyapi": {}
       },
+      "function": {
+        "AndroidJava": {
+          "deploymentBucketName": "amplify-amplifyapi-dev-180846-deployment",
+          "s3Key": "amplify-builds/AndroidJava-684f424c4267526c4352-build.zip"
+        }
+      },
       "api": {
-        "api": {}
+        "ApiAndroidJava": {}
       }
     }
   }
